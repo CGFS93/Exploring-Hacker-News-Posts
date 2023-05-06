@@ -1,24 +1,48 @@
 # Exploring-Hacker-News-Posts
 In this project, we'll work with a dataset of submissions to popular technology site Hacker News.
 
-We set a goal for the project.
-We collected and sorted the data.
-We reformatted and cleaned the data to prepare it for analysis.
-We analyzed the data.
-Curious to see what other students have done on this project? Head over to our Community to check them out. While you are there, please give your own feedback!
+This guided project brings the following skills together for some real-world practice:
 
-And of course, we welcome you to share your own project and show off your hard work. Head over to our Community to share your finished Guided Project!
+How to work with strings
+Object-oriented programming
+Dates and times
+Next, we'll use all of these skills to complete a data analysis project.
 
-You can use guided projects to build a portfolio to showcase to potential employers, so we encourage you to keep working on this. Here are some next steps for you to consider:
+Working on guided projects will give you hands-on experience with real-world examples, so we encourage you to not only complete them but to also take the time to really understand the concepts.
 
-Determine if show or ask posts receive more points on average.
-Determine if posts created at a certain time are more likely to receive more points.
-Compare your results to the average number of comments and points other posts receive.
-Use Dataquest's data science project style guide to format your project.
-You're welcome to keep working on the project here, but we recommend downloading it to your computer using the download icon above the notebook and working on it locally.
+We've made these projects challenging to prepare you for the real world, so don't feel discouraged if you have to refer to additional lessons. If you haven't worked with Jupyter Notebook before or need a refresher, we recommend completing our Jupyter Notebook Guided Project before continuing.
 
-If you choose to work on the next steps independently, you'll inevitably not know how to perform certain tasks or hit errors that you won't know how to resolve. Don't feel discouraged! This is part of the learning process. Although referring to other lessons is a great way to refresh your memory on certain topics, there are also some tools you should practice using because you'll need to use them in a real-world job setting.
+In this project, we'll work with a dataset of submissions to popular technology site Hacker News.
 
-The best thing to do if you hit an error you can't resolve or don't know how to perform a task is search for the answer on Google. When you search, make sure to include the word "python" — otherwise, you'll get results from other programming languages.
+Hacker News is a site started by the startup incubator Y Combinator, where user-submitted stories (known as "posts") receive votes and comments, similar to reddit. Hacker News is extremely popular in technology and startup circles, and posts that make it to the top of the Hacker News listings can get hundreds of thousands of visitors as a result.
 
-As you search, you'll see one site constantly appear at the top of the results — Stack Overflow. Stack Overflow is an online community where people ask and answer programming questions. In most situations, you'll find that someone has asked the same question as you — or a similar question that can help you. The community is very active, so the answers are almost always accurate.
+You can find the data set here, but note that we have reduced from almost 300,000 rows to approximately 20,000 rows by removing all submissions that didn't receive any comments and then randomly sampling from the remaining submissions. You can download this downsampled data here or from the jupyter notebook workspace by clicking File -> Open -> hacker_news.csv -> File -> Download.
+
+Below are descriptions of the columns:
+
+id: the unique identifier from Hacker News for the post
+title: the title of the post
+url: the URL that the posts links to, if the post has a URL
+num_points: the number of points the post acquired, calculated as the total number of upvotes minus the total number of downvotes
+num_comments: the number of comments on the post
+author: the username of the person who submitted the post
+created_at: the date and time of the post's submission
+We're specifically interested in posts with titles that begin with either Ask HN or Show HN. Users submit Ask HN posts to ask the Hacker News community a specific question. Below are a few examples:
+
+Ask HN: How to improve my personal website?
+Ask HN: Am I the only one outraged by Twitter shutting down share counts?
+Ask HN: Aby recent changes to CSS that broke mobile?
+
+
+Likewise, users submit Show HN posts to show the Hacker News community a project, product, or just something interesting. Below are a few examples:
+
+Show HN: Wio Link  ESP8266 Based Web of Things Hardware Development Platform'
+Show HN: Something pointless I made
+Show HN: Shanhu.io, a programming playground powered by e8vm
+
+
+We'll compare these two types of posts to determine the following:
+
+Do Ask HN or Show HN receive more comments on average?
+Do posts created at a certain time receive more comments on average?
+Let's start by importing the libraries we need and reading the dataset into a list of lists.
